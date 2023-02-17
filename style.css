@@ -11,3 +11,7 @@ html {
 body {
     font-family: 'Lato', sans-serif;
 }
+
+.list__item--done {
+    text-decoration: line-through;
+}
