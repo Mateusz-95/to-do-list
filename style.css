@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 *,
@@ -10,8 +11,114 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
+    margin: 0 auto;
+    background-color: #F1F1F1;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+.header {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.main__section--input {
+    border-width: 0px 2px 2px 2px;
+    border-color: #E9E9E9;
+    border-style: solid;
+    display: flex;
+    height: 60px;
+    padding-left: 10px;
+}
+
+.main__section--label {
+    font-size: 20px;
+    border: 2px solid #E9E9E9;
+    padding: 10px;
+}
+
+.form__label {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.form__input {
+    width: 75%;
+    margin: 10px;
+    height: 35px;
+    border: solid #EEEEEE;
+    padding-left: 10px;
+}
+
+.form__button {
+    width: 25%;
+    margin: 10px;
+    height: 35px;
+}
+
+.tasksList__header {
+    max-width: 80%;
+    margin: 5px auto 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #E9E9E9;
+    padding: 5px 0px 5px 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.tasksList {
+    max-width: 80%;
+    margin: 0px auto 0 auto;
+    background-color: #ffffff;
+    border-width: 0px 2px 2px 2px;
+    border-color: #E9E9E9;
+    border-style: solid;
+    padding: 5px 0px 5px 0px;
+}
+
+.tasksList__ul {
+    padding: 0px 0px 10px 0px;
+    list-style: none;
+}
+
+.list__item {
+    border-bottom: 2px solid #E9E9E9;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+}
+
+.list__text {
+    order: 2;
+}
+
+
+.list__remove {
+    order: 3;
+    margin: 0 0 0 auto;
+}
+
+.list__done {
+    order: 1;
+    margin: 0 10px 0 10px;
 }
 
 .list__item--done {
     text-decoration: line-through;
 }
+
+.notActive {
+    display: none;
+}  
+
+.active {
+    display: flex;
+}
+
