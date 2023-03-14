@@ -14,6 +14,7 @@
         tasks.push({
             content: newTaskContent,
         })
+        document.querySelector(".js-newTask").value = "";
     }
 
     const removeTask = (taskIndex) => {
@@ -50,11 +51,12 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item${task.done ? " list__item--done" : ""}">
-            <button class="js-remove list__remove"><img src="images/trash.png"></button>
-            <button class="js-task list__done">Zrobione?</button>
-              <div class="list__text">${task.content}</div> 
-            </li>
-            `;
+            <button class="js-remove list__remove"><img class="list__remove--img" src="images/trash.png"></button>
+            <button class="js-task list__done">${task.done ? "<img class=\"list__done--imgDone\" src=\"images/done.png\">" : "<img class=\"list__done--imgNotDone\" src=\"images/notDone.png\">"
+                }</button >
+            <div class="list__text">${task.content}</div> 
+            </li >
+        `;
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
