@@ -11,22 +11,23 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
+    font-size: 110%;
     margin: 0 auto;
     background-color: #F1F1F1;
 }
 
 .container {
-    max-width: 80%;
+    max-width: 800px;
     margin: 0 auto;
     background-color: #ffffff;
 }
 
 .header {
-    max-width: 80%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.main__section--input {
+.section__input {
     border-width: 0px 2px 2px 2px;
     border-color: #E9E9E9;
     border-style: solid;
@@ -35,7 +36,7 @@ body {
     padding-left: 10px;
 }
 
-.main__section--label {
+.section__label {
     font-size: 20px;
     border: 2px solid #E9E9E9;
     padding: 10px;
@@ -49,24 +50,37 @@ body {
 
 
 .form__input {
-    width: 75%;
+    width: 80%;
     margin: 10px;
     height: 35px;
     border: solid #EEEEEE;
     padding-left: 10px;
 }
 
+.form__input:focus {
+    outline: none !important;
+    border: 1px solid #574f4f;
+}
+
 .form__button {
-    color: #AFDCEC;
+    color: #dbfaf6;
     background-color: #017B92;
     border: none;
-    width: 25%;
+    width: 20%;
     margin: 10px;
     height: 35px;
 }
 
+.form__button:hover {
+    background-color: hsl(180, 100%, 30%);
+}
+
+.form__button:active {
+    background-color: hsl(180, 100%, 35%);
+}
+
 .tasksList__header {
-    max-width: 80%;
+    max-width: 800px;
     margin: 5px auto 0 auto;
     background-color: #ffffff;
     border: 2px solid #E9E9E9;
@@ -77,7 +91,7 @@ body {
 }
 
 .tasksList {
-    max-width: 80%;
+    max-width: 800px;
     margin: 0px auto 0 auto;
     background-color: #ffffff;
     border-width: 0px 2px 2px 2px;
@@ -98,12 +112,14 @@ body {
     display: flex;
 }
 
-.list__text {
-    order: 2;
+.list__remove--img,
+.list__done--imgDone,
+.list__done--imgNotDone {
+    width: 32px;
+    height: 32px;
 }
 
 .list__remove {
-    order: 3;
     margin: 0 0 0 auto;
     border: none;
     padding: 0;
@@ -114,7 +130,6 @@ body {
 }
 
 .list__done {
-    order: 1;
     margin: 0 10px 0 10px;
     padding: 0;
     border: none;
@@ -129,7 +144,24 @@ body {
 }
 
 @media (max-width: 767px) {
+    body {
+        padding: 20px;
+    }
+
+    .section__input {
+        display: inline-block;
+        height: 120px;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .form__input {
+        width: 90%;
+    }
+
     .form__button {
         font-size: 70%;
+        width: 90%;
     }
 }
