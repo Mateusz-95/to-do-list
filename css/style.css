@@ -46,6 +46,10 @@ color: hsl(180, 100%, 25%);
     color: hsl(180, 100%, 35%);
 }
 
+.section__buttons:disabled{
+    display: none;
+}
+
 .section__body {
     padding: 20px;
 }

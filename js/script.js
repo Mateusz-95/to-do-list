@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideDoneTasks = false;
     // empty array
 
     const addNewTask = (newTaskContent) => {
@@ -18,14 +19,14 @@
         ];
         render();
     }
-    // Funkcja, która za pomocą metody splice usuwa zadanie z tasks(tablicy) i ponownie wywołuje funkcję render(), czyli funkcję, która dodaje tekst(li i buttons) do htmlString, a później przypisuje to do htmla.
+    // Funkcja, która za pomocą metody splice usuwa zadanie z tasks(tablicy) i ponownie wywołuje funkcję render(), czyli funkcję, która dodaje tekst(li i buttons) do htmlStringTasks, a później przypisuje to do htmla.
 
     const toggleTaskDone = (taskIndex) => {
         tasks = tasks.map((task, index) => {
             if (index === taskIndex) {
-                return {...task, done: !task.done};
-            } 
-            return {...task};
+                return { ...task, done: !task.done };
+            }
+            return { ...task };
         });
         render();
     }
@@ -52,27 +53,41 @@
     }
 
     const render = () => {
-        let htmlString = "";
+        let htmlStringTasks = "";
+        let htmlStringButtons = "";
         // empty string 
-
-        for (const task of tasks) {
-            htmlString += `
+        const renderTasks = () => {
+            for (const task of tasks) {
+                htmlStringTasks += `
             <li class="list__item${task.done ? " list__item--done" : ""}">
             <button class="js-task list__done">
             ${task.done ? "<img class=\"list__done--imgDone\" src=\"images/done.png\">" : "<img class=\"list__done--imgNotDone\" src=\"images/notDone.png\">"
-                }</button >
+                    }</button >
             <div>${task.content}</div> 
             <button class="js-remove list__remove">
             <img class="list__remove--img" src="images/trash.png">
             </button>
             </li >
         `;
+            };
         };
+        renderTasks();
         // pętla, która przechodzi przez tasks(tablicę) i dla kazdego task tworzy htmla(li i 2 buttony)
 
-        document.querySelector(".js-tasks").innerHTML = htmlString;
-        // Przypisuje to, co stworzyło w pętli i później zostało dodane do htmlString, do htmla a dokładnie do ul.
+        document.querySelector(".js-tasks").innerHTML = htmlStringTasks;
+        // Przypisuje to, co stworzyło w pętli i później zostało dodane do htmlStringTasks, do htmla a dokładnie do ul.
         bindEvents();
+        const buttons = document.querySelectorAll(".js-buttons");
+
+        const renderButtons = () => {
+            if (tasks.length === 0) {
+                buttons.forEach(button => button.setAttribute("disabled", true));
+            } else {
+                buttons.forEach(button => button.removeAttribute("disabled"));
+            }
+
+        };
+        renderButtons();
     };
 
     const onFormSubmit = (event) => {
@@ -91,6 +106,10 @@
         render();
 
     }
+
+    const hideButtonsWhenNoTasks = () => {
+
+    };
 
     const init = () => {
         render();
