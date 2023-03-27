@@ -23,6 +23,27 @@ body {
 .section__header {
     padding: 20px;
     border-bottom: 2px solid #e1e1e1;
+    display: grid;
+    grid-template-columns: auto 150px 150px;
+}
+
+.section__header--buttons {
+    padding: 5px 20px 5px 20px;
+    margin-top: 20px;
+}
+
+.section__buttons {
+border: none;
+background-color: #ffffff;
+color: hsl(180, 100%, 25%);
+}
+
+.section__buttons:hover {
+    color: hsl(180, 100%, 30%);
+}
+
+.section__buttons:active {
+    color: hsl(180, 100%, 35%);
 }
 
 .section__body {
