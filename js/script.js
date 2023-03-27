@@ -21,7 +21,12 @@
     // Funkcja, która za pomocą metody splice usuwa zadanie z tasks(tablicy) i ponownie wywołuje funkcję render(), czyli funkcję, która dodaje tekst(li i buttons) do htmlString, a później przypisuje to do htmla.
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = tasks.map((task, index) => {
+            if (index === taskIndex) {
+                return {...task, done: !task.done};
+            } 
+            return {...task};
+        });
         render();
     }
     // Funkcja, która zmienia task.done na !task.done.
