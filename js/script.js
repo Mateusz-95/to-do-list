@@ -6,7 +6,7 @@
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
-            { content: newTaskContent },
+            { content: newTaskContent, done: false },
         ];
         document.querySelector(".js-newTask").value = "";
     }
@@ -19,7 +19,6 @@
         ];
         render();
     }
-    // Funkcja, która za pomocą metody splice usuwa zadanie z tasks(tablicy) i ponownie wywołuje funkcję render(), czyli funkcję, która dodaje tekst(li i buttons) do htmlStringTasks, a później przypisuje to do htmla.
 
     const toggleTaskDone = (taskIndex) => {
         tasks = tasks.map((task, index) => {
