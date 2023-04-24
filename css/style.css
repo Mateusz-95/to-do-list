@@ -33,9 +33,9 @@ body {
 }
 
 .section__buttons {
-border: none;
-background-color: #ffffff;
-color: hsl(180, 100%, 25%);
+    border: none;
+    background-color: #ffffff;
+    color: hsl(180, 100%, 25%);
 }
 
 .section__buttons:hover {
@@ -46,7 +46,7 @@ color: hsl(180, 100%, 25%);
     color: hsl(180, 100%, 35%);
 }
 
-.section__buttons:disabled{
+.section__buttons:disabled {
     display: none;
 }
 
@@ -127,6 +127,18 @@ color: hsl(180, 100%, 25%);
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
+}
+
+.completeAllButton-disabled {
+    color: #888;
+}
+
+.completeAllButton-disabled:hover {
+    color: #888;
+}
+
+.completeAllButton-disabled:active {
+    color: #888;
 }
 
 .list__item--done {
