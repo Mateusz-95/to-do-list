@@ -51,6 +51,28 @@
         });
     }
 
+    const consoleWhenClickHideDoneTasksButton = () => {
+        console.log("You clicked on hideDoneTasksButton");
+    };
+
+    const consoleWhenClickDoneAllTasksButton = () => {
+        console.log("You clicked on doneAllTasksButton");
+    };
+
+    const bindButtonsEvents = () => {
+        const hideDoneTasksButton = document.querySelector(".js-hideDoneTasks");
+        const doneAllTasksButton = document.querySelector(".js-doneAllTasks");
+
+        if (tasks.length !== 0) {
+            hideDoneTasksButton.addEventListener("click", () => {
+                consoleWhenClickHideDoneTasksButton()
+            });
+            doneAllTasksButton.addEventListener("click", () => {
+                consoleWhenClickDoneAllTasksButton()
+            });
+        }
+    };
+
     const render = () => {
         let htmlStringTasks = "";
         let htmlStringButtons = "";
@@ -75,7 +97,6 @@
 
         document.querySelector(".js-tasks").innerHTML = htmlStringTasks;
         // Przypisuje to, co stworzyło w pętli i później zostało dodane do htmlStringTasks, do htmla a dokładnie do ul.
-        bindEvents();
         const buttons = document.querySelectorAll(".js-buttons");
 
         const renderButtons = () => {
@@ -83,18 +104,16 @@
                 htmlStringButtons += `<button class="section__button js-buttons js-hideDoneTasks">
                 Ukryj ukończone
                 </button>
-                <button class="section__button js-buttons js-completeAllTasks">
+                <button class="section__button js-buttons js-doneAllTasks">
                 Ukończ wszystkie
                 </button>`
-
             };
 
             document.querySelector(".js-buttons").innerHTML = htmlStringButtons;
-
-
-
         };
         renderButtons();
+        bindEvents();
+        bindButtonsEvents();
 
     };
 
