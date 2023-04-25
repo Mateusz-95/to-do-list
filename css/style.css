@@ -13,10 +13,6 @@ body {
     background-color: #f0f0f0;
 }
 
-.hidden {
-    display: none !important;
-}
-
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -27,7 +23,7 @@ body {
     padding: 20px;
     border-bottom: 2px solid #e1e1e1;
     display: grid;
-    grid-template-columns: auto 150px 150px;
+    grid-template-columns: auto 300px;
 }
 
 .section__header--buttons {
@@ -35,21 +31,27 @@ body {
     margin-top: 20px;
 }
 
-.section__buttons {
+.section__buttonsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__button {
     border: none;
     background-color: #ffffff;
     color: hsl(180, 100%, 25%);
 }
 
-.section__buttons:hover {
+.section__button:hover {
     color: hsl(180, 100%, 30%);
 }
 
-.section__buttons:active {
+.section__button:active {
     color: hsl(180, 100%, 35%);
 }
 
-.section__buttons:disabled {
+.section__button:disabled {
     display: none;
 }
 
@@ -105,6 +107,10 @@ body {
     display: flex;
 }
 
+.list__item--hidden {
+    display: none;
+}
+
 .list__remove--img,
 .list__done--imgDone,
 .list__done--imgNotDone {
@@ -146,6 +152,12 @@ body {
 
 .list__item--done {
     text-decoration: line-through;
+}
+
+.section__buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 767px) {

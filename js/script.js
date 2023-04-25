@@ -31,36 +31,6 @@
     }
     // Funkcja, która zmienia task.done na !task.done.
 
-    const toggleHideDoneTasks = () => {
-        const hideDoneTaskButton = document.querySelector(".js-hideDoneTasks");
-        hideDoneTasks = !hideDoneTasks;
-        if (hideDoneTasks) {
-            hideDoneTaskButton.textContent = "Pokaż ukończone";
-        } else {
-            hideDoneTaskButton.textContent = "Ukryj ukończone";
-        }
-    };
-
-    const functionAfterHideButton = () => {
-        const listItemElements = document.querySelectorAll(".list__item--done");
-        if (hideDoneTasks) {
-            listItemElements.forEach(listItemElement => {
-                listItemElement.classList.add("list__item--hidden")
-            })
-        } else {
-            listItemElements.forEach(listItemElement => {
-                listItemElement.classList.remove("list__item--hidden")
-            });
-        }
-    };
-
-    const bindHideButtonEvents = () => {
-        const hideDoneTaskButton = document.querySelector(".js-hideDoneTasks");
-        hideDoneTaskButton.addEventListener("click", () => {
-            toggleHideDoneTasks();
-        });
-    };
-
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         // Łapie wszystkie przyciski o klasie js-remove.
@@ -109,16 +79,22 @@
         const buttons = document.querySelectorAll(".js-buttons");
 
         const renderButtons = () => {
-            if (tasks.length === 0) {
-                buttons.forEach(button => button.setAttribute("disabled", true));
-            } else {
-                buttons.forEach(button => button.removeAttribute("disabled"));
-            }
+            if (tasks.length !== 0) {
+                htmlStringButtons += `<button class="section__button js-buttons js-hideDoneTasks">
+                Ukryj ukończone
+                </button>
+                <button class="section__button js-buttons js-completeAllTasks">
+                Ukończ wszystkie
+                </button>`
+
+            };
+
+            document.querySelector(".js-buttons").innerHTML = htmlStringButtons;
+
+
 
         };
         renderButtons();
-        functionAfterHideButton();
-
 
     };
 
@@ -139,12 +115,7 @@
 
     }
 
-    const hideButtonsWhenNoTasks = () => {
-
-    };
-
     const init = () => {
-        bindHideButtonEvents();
         render();
 
         const form = document.querySelector(".js-form");
