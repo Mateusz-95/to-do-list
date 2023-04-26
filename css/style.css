@@ -111,9 +111,7 @@ body {
     display: none;
 }
 
-.list__remove--img,
-.list__done--imgDone,
-.list__done--imgNotDone {
+.list__img {
     width: 32px;
     height: 32px;
 }

@@ -100,11 +100,11 @@
                 htmlStringTasks += `
             <li class="list__item${task.done ? " list__item--done" : ""}">
             <button class="js-task list__done">
-            ${task.done ? "<img class=\"list__done--imgDone\" src=\"images/done.png\">" : "<img class=\"list__done--imgNotDone\" src=\"images/notDone.png\">"
-                    }</button >
+            ${task.done ? "<img class=\"list__img\" src=\"images/done.png\">" : "<img class=\"list__img\" src=\"images/notDone.png\">"}
+            </button >
             <div>${task.content}</div> 
             <button class="js-remove list__remove">
-            <img class="list__remove--img" src="images/trash.png">
+            <img class="list__img" src="images/trash.png">
             </button>
             </li >
         `;
