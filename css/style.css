@@ -162,4 +162,16 @@ body {
     .form {
         grid-template-columns: 1fr;
     }
+
+    .section__header {
+        grid-template-columns: auto;
+    }
+
+    .section__buttonsContainer {
+        flex-direction: column;
+    }
+
+    .section__button {
+        padding: 10px;
+    }
 }
