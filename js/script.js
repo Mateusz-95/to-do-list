@@ -67,6 +67,7 @@
         if (tasks.length !== 0) {
             hideDoneTasksButton.addEventListener("click", () => {
                 switchHideDoneTasks();
+                render();
             });
             doneAllTasksButton.addEventListener("click", () => {
                 consoleWhenClickDoneAllTasksButton()
@@ -103,7 +104,7 @@
         const renderButtons = () => {
             if (tasks.length !== 0) {
                 htmlStringButtons += `<button class="section__button js-buttons js-hideDoneTasks">
-                Ukryj ukończone
+                ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
                 </button>
                 <button class="section__button js-buttons js-doneAllTasks">
                 Ukończ wszystkie
