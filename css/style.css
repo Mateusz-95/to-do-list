@@ -151,7 +151,7 @@ body {
     background-color: #ffffff;
 }
 
-.list__item--done {
+.list__content {
     text-decoration: line-through;
 }
 

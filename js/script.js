@@ -51,7 +51,7 @@
     const addClassHide = () => {
         const listItemElements = document.querySelectorAll(".list__item");
         for (const listItemElement of listItemElements) {
-            if (hideDoneTasks && listItemElement.classList.contains("list__item--done")) {
+            if (hideDoneTasks && listItemElement.classList.contains("js-taskDone")) {
                 listItemElement.classList.add("list__item--hide");
             }
         }
@@ -91,11 +91,13 @@
         const renderTasks = () => {
             for (const task of tasks) {
                 htmlStringTasks += `
-            <li class="list__item${task.done ? " list__item--done" : ""}">
+            <li class="list__item${task.done ? " js-taskDone" : ""}">
                 <button class="js-task list__done list__buttons">
                     ${task.done ? "✅" : "🟩"}
                 </button >
-                <div>${task.content}</div> 
+                    <div class="${task.done ? "list__content" : ""}">
+                        ${task.content}
+                    </div> 
                 <button class="js-remove list__remove list__buttons">
                      🗑️
                 </button>
