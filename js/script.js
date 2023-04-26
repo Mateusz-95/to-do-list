@@ -48,15 +48,6 @@
         hideDoneTasks = !hideDoneTasks;
     };
 
-    const addClassHide = () => {
-        const listItemElements = document.querySelectorAll(".list__item");
-        for (const listItemElement of listItemElements) {
-            if (hideDoneTasks && listItemElement.classList.contains("js-taskDone")) {
-                listItemElement.classList.add("list__item--hide");
-            }
-        }
-    };
-
     const doneAllTasks = () => {
         tasks = tasks.map(task => {
             return {
@@ -91,7 +82,10 @@
         const renderTasks = () => {
             for (const task of tasks) {
                 htmlStringTasks += `
-            <li class="list__item${task.done ? " js-taskDone" : ""}">
+            <li class="list__item
+            ${task.done ? " js-taskDone" : ""}
+            ${hideDoneTasks && task.done ? "list__item--hide" : ""}"
+            >
                 <button class="js-task list__done list__buttons">
                     ${task.done ? "✅" : "🟩"}
                 </button >
@@ -129,8 +123,6 @@
         renderButtons();
         bindEvents();
         bindButtonsEvents();
-        addClassHide();
-
     };
 
     const onFormSubmit = (event) => {
