@@ -136,18 +136,6 @@ body {
     background-color: #ffffff;
 }
 
-.completeAllButton-disabled {
-    color: #888;
-}
-
-.completeAllButton-disabled:hover {
-    color: #888;
-}
-
-.completeAllButton-disabled:active {
-    color: #888;
-}
-
 .list__item--done {
     text-decoration: line-through;
 }
