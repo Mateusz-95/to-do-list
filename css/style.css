@@ -41,14 +41,15 @@ body {
     border: none;
     background-color: #ffffff;
     color: hsl(180, 100%, 25%);
+    transition: color 0.5s;
 }
 
 .section__button:hover {
-    color: hsl(180, 100%, 30%);
+    color: hsl(180, 100%, 35%);
 }
 
 .section__button:active {
-    color: hsl(180, 100%, 35%);
+    color: hsl(180, 100%, 40%);
 }
 
 .section__button:disabled {
@@ -86,6 +87,7 @@ body {
     background-color: hsl(180, 100%, 25%);
     border: none;
     padding: 10px;
+    transition: background 0.5s;
 }
 
 .form__button:hover {
@@ -114,6 +116,15 @@ body {
 .list__img {
     width: 32px;
     height: 32px;
+    transition: 0.5s;
+}
+
+.list__img:hover {
+    filter: brightness(120%);
+}
+
+.list__img:active {
+    filter: brightness(140%);
 }
 
 .list__remove {
