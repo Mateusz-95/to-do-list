@@ -59,14 +59,18 @@
         const listItemElements = document.querySelectorAll(".list__item");
         for (const listItemElement of listItemElements) {
             if (hideDoneTasks && listItemElement.classList.contains("list__item--done")) {
-            listItemElement.classList.add("list__item--hide");
+                listItemElement.classList.add("list__item--hide");
             }
         }
     };
 
-
-    const consoleWhenClickDoneAllTasksButton = () => {
-        console.log("You clicked on doneAllTasksButton");
+    const doneAllTasks = () => {
+        tasks = tasks.map(task => {
+            return {
+                ...task,
+                done: true,
+            }
+        })
     };
 
     const bindButtonsEvents = () => {
@@ -79,7 +83,8 @@
                 render();
             });
             doneAllTasksButton.addEventListener("click", () => {
-                consoleWhenClickDoneAllTasksButton()
+                doneAllTasks();
+                render();
             });
         }
     };
