@@ -73,6 +73,8 @@
         })
     };
 
+    const areAllTasksDone = tasks => tasks.every(task => task.done);
+
     const bindButtonsEvents = () => {
         const hideDoneTasksButton = document.querySelector(".js-hideDoneTasks");
         const doneAllTasksButton = document.querySelector(".js-doneAllTasks");
@@ -120,7 +122,7 @@
                 htmlStringButtons += `<button class="section__button js-buttons js-hideDoneTasks">
                 ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
                 </button>
-                <button class="section__button js-buttons js-doneAllTasks">
+                <button class="section__button js-buttons js-doneAllTasks" ${areAllTasksDone(tasks) ? "disabled" : ""}>
                 Ukończ wszystkie
                 </button>`
             };

@@ -52,7 +52,7 @@ body {
 }
 
 .section__button:disabled {
-    display: none;
+    color: #ccc;
 }
 
 .section__body {
