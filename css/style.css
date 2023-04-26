@@ -42,6 +42,7 @@ body {
     background-color: #ffffff;
     color: hsl(180, 100%, 25%);
     transition: color 0.5s;
+    cursor: pointer;
 }
 
 .section__button:hover {
@@ -88,6 +89,7 @@ body {
     border: none;
     padding: 10px;
     transition: background 0.5s, transform 0.5s;
+    cursor: pointer;
 }
 
 .form__button:hover {
@@ -114,17 +116,18 @@ body {
     display: none;
 }
 
-.list__img {
+.list__buttons {
     width: 32px;
     height: 32px;
     transition: 0.5s;
+    cursor: pointer;
 }
 
-.list__img:hover {
+.list__buttons:hover {
     filter: brightness(120%);
 }
 
-.list__img:active {
+.list__buttons:active {
     filter: brightness(140%);
 }
 

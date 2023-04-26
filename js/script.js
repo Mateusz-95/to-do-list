@@ -91,12 +91,12 @@
             for (const task of tasks) {
                 htmlStringTasks += `
             <li class="list__item${task.done ? " list__item--done" : ""}">
-            <button class="js-task list__done">
-            ${task.done ? "<img class=\"list__img\" src=\"images/done.png\">" : "<img class=\"list__img\" src=\"images/notDone.png\">"}
+            <button class="js-task list__done list__buttons">
+            ${task.done ? "✅" : "🟩"}
             </button >
             <div>${task.content}</div> 
-            <button class="js-remove list__remove">
-            <img class="list__img" src="images/trash.png">
+            <button class="js-remove list__remove list__buttons">
+            🗑️
             </button>
             </li >
         `;
