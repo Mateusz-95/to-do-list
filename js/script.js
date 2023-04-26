@@ -51,9 +51,10 @@
         });
     }
 
-    const consoleWhenClickHideDoneTasksButton = () => {
-        console.log("You clicked on hideDoneTasksButton");
+    const switchHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
     };
+
 
     const consoleWhenClickDoneAllTasksButton = () => {
         console.log("You clicked on doneAllTasksButton");
@@ -65,7 +66,7 @@
 
         if (tasks.length !== 0) {
             hideDoneTasksButton.addEventListener("click", () => {
-                consoleWhenClickHideDoneTasksButton()
+                switchHideDoneTasks();
             });
             doneAllTasksButton.addEventListener("click", () => {
                 consoleWhenClickDoneAllTasksButton()
