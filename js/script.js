@@ -55,6 +55,15 @@
         hideDoneTasks = !hideDoneTasks;
     };
 
+    const addClassHide = () => {
+        const listItemElements = document.querySelectorAll(".list__item");
+        for (const listItemElement of listItemElements) {
+            if (hideDoneTasks && listItemElement.classList.contains("list__item--done")) {
+            listItemElement.classList.add("list__item--hide");
+            }
+        }
+    };
+
 
     const consoleWhenClickDoneAllTasksButton = () => {
         console.log("You clicked on doneAllTasksButton");
@@ -116,6 +125,7 @@
         renderButtons();
         bindEvents();
         bindButtonsEvents();
+        addClassHide();
 
     };
 

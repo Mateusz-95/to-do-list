@@ -107,7 +107,7 @@ body {
     display: flex;
 }
 
-.list__item--hidden {
+.list__item--hide {
     display: none;
 }
 
