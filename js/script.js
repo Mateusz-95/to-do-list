@@ -7,7 +7,6 @@
             ...tasks,
             { content: newTaskContent, done: false },
         ];
-        document.querySelector(".js-newTask").value = "";
     }
 
     const removeTask = (taskIndex) => {
@@ -46,6 +45,7 @@
 
     const switchHideDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks;
+        render();
     };
 
     const doneAllTasks = () => {
@@ -53,6 +53,7 @@
           ...task,
           done: true
         }));
+        render();
       };
 
     const areAllTasksDone = tasks => tasks.every(task => task.done);
@@ -64,11 +65,10 @@
         if (tasks.length !== 0) {
             hideDoneTasksButton.addEventListener("click", () => {
                 switchHideDoneTasks();
-                render();
             });
+
             doneAllTasksButton.addEventListener("click", () => {
                 doneAllTasks();
-                render();
             });
         }
     };
@@ -132,6 +132,7 @@
         };
 
         addNewTask(newTaskContent);
+        document.querySelector(".js-newTask").value = "";
 
         render();
 
