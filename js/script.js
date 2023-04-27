@@ -49,13 +49,11 @@
     };
 
     const doneAllTasks = () => {
-        tasks = tasks.map(task => {
-            return {
-                ...task,
-                done: true,
-            }
-        })
-    };
+        tasks = tasks.map((task) => ({
+          ...task,
+          done: true
+        }));
+      };
 
     const areAllTasksDone = tasks => tasks.every(task => task.done);
 
